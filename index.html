@@ -19,28 +19,50 @@
     </header>
     <main>
       <section class="container-fluid d-flex justify-content-between">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="card">
-            <div class="card-body"></div>
+            <div class="card-body">
+              <h3 class="card-title text-center">Search for a city</h3>
+              <form id="city-form" class="text-center">
+                <label class="form-label" for="city">Enter City Name</label>
+                <input
+                  name="city"
+                  id="city"
+                  type="text"
+                  autofocus="true"
+                  class="city-input col pt-1 text-center mb-2"
+                  placeholder="Victoria"
+                />
+            </form>
+              <button
+                id="search"
+                class="btn searchBtn btn-primary rounded mb-2"
+              >
+                Search
+              </button>
+            </div>
           </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-9">
           <div class="card border-1 border-dark">
-            <div class="card-body"></div>
+            <div class="card-body">
+                <h3 class="card-title text-center justify-content-center">Displaying Weather for: <span id="city-search">Victoria</span></h3>
+            </div>
+            
           </div>
         </div>
       </section>
       <section class="container-fluid d-flex justify-content-between">
-        <div class="col-md-4 border-1 border-top border-dark">
-            <div class="card">
-              <div class="card-body"></div>
-            </div>
+        <div class="col-md-3 border-1 border-top border-dark">
+          <div class="card">
+            <div class="card-body"></div>
           </div>
-          <div class="col-md-8">
-            <div class="card">
-              <div class="card-body"></div>
-            </div>
+        </div>
+        <div class="col-md-9">
+          <div class="card">
+            <div class="card-body"></div>
           </div>
+        </div>
       </section>
     </main>
 
