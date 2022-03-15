@@ -30,7 +30,7 @@ fetch(geoUrl + "appid=" + apiKey + "&q=" + city + "," + state + ",us")
         return weather.json();
       })
       .then(function (data1) {
-        console.log(data1.daily[0]);
+        console.log(data1.daily[0].temp.day);
       });
   });
 }
