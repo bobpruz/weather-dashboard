@@ -35,4 +35,4 @@ fetch(geoUrl + "appid=" + apiKey + "&q=" + city + "," + state + ",us")
   });
 }
 
-forcast("victoria", "mn")
+forcast("Victoria", "MN")
