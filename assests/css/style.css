@@ -3,7 +3,15 @@ body {
 }
 
 .card-search-title {
+    font-size: 1.5vw;;
+}
+
+.card-title-now {
     font-size: 2vw;
+}
+
+.card-subtitle-now {
+    font-weight: bold;
 }
 
 .five-forecast-title {
@@ -13,6 +21,7 @@ body {
 .forecast {
     font-size: .75vw;
     color: antiquewhite;
+    font-weight: bold;
 }
 
 .card-title {

@@ -29,6 +29,7 @@ var forecast = function (city, state) {
           return weather.json();
         })
         .then(function (data1) {
+          $("#city-search").text(city + ", " + state)
           $("#temp-now").text(
             "Temperature: " + data1.current.temp + " \u00B0F"
           );
@@ -63,4 +64,4 @@ var forecast = function (city, state) {
     });
 };
 
-forecast("Victoria", "MN");
+forecast("Thayer", "IA");
