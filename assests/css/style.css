@@ -2,7 +2,7 @@ body {
     background-color: lightyellow;
 }
 
-.card-title {
+.card-search-title {
     font-size: 2vw;
 }
 
@@ -11,5 +11,10 @@ body {
 }
 
 .forecast {
-    background-color: blue;
+    font-size: .75vw;
+    color: antiquewhite;
+}
+
+.card-title {
+    font-size: 1vw;
 }
