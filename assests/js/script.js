@@ -7,6 +7,7 @@ var exclude = "exclude=minutely,hourly,alerts";
 var units = "imperial";
 
 
+
 var forcast = function(city, state) {
 fetch(geoUrl + "appid=" + apiKey + "&q=" + city + "," + state + ",us")
   .then(function (response) {
@@ -31,6 +32,9 @@ fetch(geoUrl + "appid=" + apiKey + "&q=" + city + "," + state + ",us")
       })
       .then(function (data1) {
         console.log(data1.daily[0].temp.day);
+        $("#temp-now").text("Temperature: " + data1.current.temp)
+        $("#wind-now").text("Wind Speed: " + data1.current.wind_speed)
+        $("#humidity-now").text("Humidity: " + data1.current.humidity)
       });
   });
 }

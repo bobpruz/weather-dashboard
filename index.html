@@ -17,10 +17,9 @@
     <header class="bg-primary">
       <h1 class="header text-center text-warning">Weather Dashboard</h1>
     </header>
-    <main>
-      <section class="container-fluid d-flex justify-content-between">
+    <main class="row h-100 d-flex p-2">
         <!-- Seach Form -->
-        <div class="col-md-4">
+        <div class="col-4 text-center">
           <div class="card">
             <div class="card-body d-flex flex-column">
               <h3 class="card-title text-center">Search for a city and state</h3>
@@ -53,32 +52,30 @@
               </form>
             </div>
           </div>
-        </div>
-        <!-- todays forcast -->
-        <div class="col-md-8">
-          <div class="card border-1 border-dark h-75">
-            <div class="card-body">
-              <h3 class="card-title text-center justify-content-center">
-                Displaying Weather for: <span id="city-search">Victoria</span>
-              </h3>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="container-fluid d-flex justify-content-between">
-        <!-- search history -->
-        <div class="col-md-4 border-1 border-top border-dark">
+           <!-- search history -->
+        <div class="border-1 border-top border-dark">
           <div class="card">
             <div class="card-body" id="history"></div>
           </div>
         </div>
-        <!-- 5 day forcast -->
-        <div class="col-md-8">
+        </div>
+        <div class="col-8 text-center">
+          <div class="card border-1 border-dark">
+            <div class="card-body">
+              <h3 class="card-title text-center justify-content-center">
+                Displaying Weather for: <span id="city-search">Victoria</span>
+              </h3>
+              <p class="card-subtitle p-2" id="temp-now"></p>
+              <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon">
+              <p class="card-subtitle p-2" id="wind-now"></p>
+              <p class="card-subtitle p-2" id="humidity-now"></p>
+            </div>
+          </div>
           <div class="card">
-            <h4 class="text-center">5 Day Weather Forcast</h4>
+            <h4 class="five-forcast-title text-center">5 Day Weather Forcast</h4>
             <div class="row d-flex justify-content-around">
                  <!-- day 1 -->
-              <div class="5-day card col-2">
+              <div class="five-day card col-2">
                 <div class="card-body forcast">
                   <h5 class="card-title" id="d1"></h5>
                   <img id="wicon-1"></img>
@@ -88,7 +85,7 @@
                 </div>
               </div>
               <!-- day 2 -->
-              <div class="5-day card col-2">
+              <div class="five-day card col-2">
                 <div class="card-body forcast">
                   <h5 class="card-title" id="d2"></h5>
                   <img id="wicon-2"></img>
@@ -98,17 +95,17 @@
                 </div>
               </div>
             <!-- day 3 -->
-              <div class="5-day card col-2">
+              <div class="five-day card col-2">
                 <div class="card-body forcast">
                   <h5 class="card-title" id="d3"></h5>
-                  <img id="wicon-3"></img>
+                  <img src="http://openweathermap.org/img/wn/10d.png" alt="weather icon">
                   <p class="card-subtitle pb-2" id="temp-3"></p>
                   <p class="card-subtitle pb-2" id="wind-3" ></p>
                   <p class="card-subtitle pb-2" id="humidity-3"></p>
                 </div>
               </div>
               <!-- day 4 -->
-              <div class="5-day card col-2">
+              <div class="five-day card col-2">
                 <div class="card-body forcast">
                   <h5 class="card-title" id="d4"></h5>
                   <img id="wicon-4"></img>
@@ -118,7 +115,7 @@
                 </div>
               </div>
               <!-- day 5 -->
-              <div class="5-day card col-2">
+              <div class="five-day card col-2">
                 <div class="card-body forcast">
                   <h5 class="card-title" id="d5"></h5>
                   <img id="wicon-5"></img>
@@ -128,9 +125,8 @@
                 </div>
               </div>
             </div>
-            </div>
           </div>
-        </section>
+        </div>
     </main>
 
     <script
@@ -138,6 +134,10 @@
       integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
       crossorigin="anonymous"
     ></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="./assests/js/script.js"></script>
   </body>
 </html>
+
+<img src="" alt="" srcset="">
