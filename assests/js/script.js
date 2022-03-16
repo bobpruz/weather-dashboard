@@ -8,7 +8,7 @@ var units = "imperial";
 
 
 
-var forcast = function(city, state) {
+var forecast = function(city, state) {
 fetch(geoUrl + "appid=" + apiKey + "&q=" + city + "," + state + ",us")
   .then(function (response) {
     return response.json();
@@ -41,4 +41,4 @@ fetch(geoUrl + "appid=" + apiKey + "&q=" + city + "," + state + ",us")
   });
 }
 
-forcast("Victoria", "MN")
+forecast("Victoria", "MN")
