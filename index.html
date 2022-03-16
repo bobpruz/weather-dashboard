@@ -17,10 +17,10 @@
     <header class="bg-primary">
       <h1 class="header text-center text-warning">Weather Dashboard</h1>
     </header>
-    <main class="row h-100 d-flex p-2">
+    <main class="row h-100 d-flex p-4">
         <!-- Seach Form -->
         <div class="col-4 text-center">
-          <div class="card">
+          <div class="card bg-transparent">
             <div class="card-body d-flex flex-column">
               <h3 class="card-title text-center">Search for a city and state</h3>
               <form id="city-form" class="text-center">
@@ -59,19 +59,23 @@
           </div>
         </div>
         </div>
-        <div class="col-8 text-center">
-          <div class="card border-1 border-dark">
+        <div class="col-8">
+          <div class="card border-1 border-dark bg-transparent">
             <div class="card-body">
-              <h3 class="card-title text-center justify-content-center">
-                Displaying Weather for: <span id="city-search">Victoria</span>
-              </h3>
-              <p class="card-subtitle p-2" id="temp-now"></p>
-              <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon">
+              <div class="d-flex d-inline">
+                <h3 class="card-title">
+                  Displaying Weather for: <span id="city-search">Victoria</span>
+                </h3>
+                <img id="wicon-now" src="" alt="weather icon">'
+              </div>
+
+                <p class="card-subtitle p-2" id="temp-now"></p>
               <p class="card-subtitle p-2" id="wind-now"></p>
               <p class="card-subtitle p-2" id="humidity-now"></p>
+              <p class="card-subtitle p-2" id="uv-now"></p>
             </div>
           </div>
-          <div class="card">
+          <div class="card bg-transparent">
             <h4 class="five-forcast-title text-center">5 Day Weather Forcast</h4>
             <div class="row d-flex justify-content-around">
                  <!-- day 1 -->

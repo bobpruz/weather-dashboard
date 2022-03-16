@@ -31,10 +31,12 @@ fetch(geoUrl + "appid=" + apiKey + "&q=" + city + "," + state + ",us")
         return weather.json();
       })
       .then(function (data1) {
-        console.log(data1.daily[0].temp.day);
-        $("#temp-now").text("Temperature: " + data1.current.temp)
-        $("#wind-now").text("Wind Speed: " + data1.current.wind_speed)
-        $("#humidity-now").text("Humidity: " + data1.current.humidity)
+        console.log(data1.current);
+        $("#temp-now").text("Temperature: " + data1.current.temp + " \u00B0F")
+        $("#wind-now").text("Wind Speed: " + data1.current.wind_speed + " MPH")
+        $("#humidity-now").text("Humidity: " + data1.current.humidity + " %")
+        $("#uv-now").text("UV Index: " + data1.current.uvi)
+        $("#wicon-now").attr("src",'http://openweathermap.org/img/wn/' + data1.current.weather[0].icon + '.png');
       });
   });
 }
