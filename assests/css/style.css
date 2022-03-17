@@ -27,3 +27,8 @@ body {
 .card-title {
     font-size: 1vw;
 }
+
+.card-body h6 {
+    font-size: 1.25vw;
+    font-weight: bold;
+}

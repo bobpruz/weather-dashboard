@@ -5,9 +5,13 @@ var lat = "";
 var lon = "";
 var exclude = "exclude=minutely,hourly,alerts";
 var units = "imperial";
+var searchBtn = $("#search");
+var dateNow = dayjs().format("MM/DD/YYYY");
+
+console.log("test");
 
 var forecast = function (city, state) {
-  fetch(geoUrl + "appid=" + apiKey + "&q=" + city + "," + state + ",us")
+  fetch(geoUrl + "appid=" + apiKey + "&q=" + "phoenix" + "," + "az" + ",us")
     .then(function (response) {
       return response.json();
     })
@@ -29,7 +33,7 @@ var forecast = function (city, state) {
           return weather.json();
         })
         .then(function (data1) {
-          $("#city-search").text(city + ", " + state)
+          $("#city-search").text(city + ", " + state + " " + dateNow);
           $("#temp-now").text(
             "Temperature: " + data1.current.temp + " \u00B0F"
           );
@@ -44,7 +48,7 @@ var forecast = function (city, state) {
               data1.current.weather[0].icon +
               ".png"
           );
-          var s = 1
+          var s = 1;
 
           for (var i = 0; i < data1.daily.length && i < 5; i++) {
             $("#wicon-" + s).attr(
@@ -53,15 +57,31 @@ var forecast = function (city, state) {
                 data1.daily[i].weather[0].icon +
                 ".png"
             );
-            $("#temp-" + s).text("Temp: " + data1.daily[i].temp.day + " \u00B0F");
+            $("#temp-" + s).text(
+              "Temp: " + data1.daily[i].temp.day + " \u00B0F"
+            );
             $("#wind-" + s).text(
               "Wind Speed: " + data1.daily[i].wind_speed + " MPH"
             );
-            $("#humidity-" + s).text("Humidity: " + data1.daily[i].humidity + " %");
-            s++
+            $("#humidity-" + s).text(
+              "Humidity: " + data1.daily[i].humidity + " %"
+            );
+            var date = dayjs().add(s, "days");
+            var newDate = date.$M + "/" + date.$D + "/" + date.$y;
+            $("#d" + s).text(newDate);
+            s++;
           }
         });
     });
 };
+
+// var search = function() {
+//   var city = document.getElementById("city").value;
+//   var state = document.getElementById("state").value;
+
+//   forecast(city, state)
+// }
+
+// searchBtn.on("click", search)
 
 forecast("Thayer", "IA");
