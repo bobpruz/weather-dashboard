@@ -75,6 +75,10 @@ var forecast = function (city, state) {
     });
 };
 
+var saveHistory = function(city, state) {
+  $("#history").append('<button id="searchHistory" class="btn historyBtn btn-primary rounded mb-2 w-100" dataCity="' + city + '"dataState="' + state + '">' + city + ", " + state + '</button>')
+}
+
 var search = function (e) {
   e.preventDefault();
   var city = document.getElementById("city").value;
@@ -82,6 +86,8 @@ var search = function (e) {
 
   console.log(city);
   console.log(state);
+
+  saveHistory(city, state);
 
   forecast(city, state);
 };

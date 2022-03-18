@@ -6,6 +6,10 @@ body {
     font-size: 1.5vw;;
 }
 
+#history {
+    border: none;
+}
+
 .card-title-now {
     font-size: 2vw;
 }
