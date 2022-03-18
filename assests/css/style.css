@@ -2,22 +2,44 @@ body {
     background-color: lightyellow;
 }
 
+/* search form */
 .card-search-title {
     font-size: 1.5vw;;
 }
 
+/* search history */
 #history {
     border: none;
 }
+/* todays forecast */
 
 .card-title-now {
     font-size: 2vw;
+}
+
+/* uv color mapping */
+.uv-severe {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+.uv-moderate {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+.uv-favorable {
+    background-color: green;
+    font-weight: bold;
+    color: white;
 }
 
 .card-subtitle-now {
     font-weight: bold;
 }
 
+/* 5 day forecast */
 .five-forecast-title {
     font-size: 1.5vw;
 }

@@ -44,13 +44,23 @@ var forecast = function (city, state) {
             "Wind Speed: " + data1.current.wind_speed + " MPH"
           );
           $("#humidity-now").text("Humidity: " + data1.current.humidity + " %");
-          $("#uv-now").text("UV Index: " + data1.current.uvi);
+          $("#uv-now").text(data1.current.uvi);
           $("#wicon-now").attr(
             "src",
             "http://openweathermap.org/img/wn/" +
               data1.current.weather[0].icon +
-              ".png"
-          );
+              ".png");
+          if(data1.current.uvi < 3) {
+            $("#uv-now").addClass("uv-favorable");
+          } else if (data1.current.uvi > 3 && data1.current.uvi < 6) {
+            $("#uv-now").removeClass("uv-favorable");
+            $("#uv-now").addClass("uv-moderate");
+          } else {
+            $("#uv-now").removeClass("uv-favorable");
+            $("#uv-now").removeClass("uv-moderate");
+            $("#uv-now").addClass("uv-severe");
+          }
+          
           var s = 1;
 
           for (var i = 0; i < data1.daily.length && i < 5; i++) {
