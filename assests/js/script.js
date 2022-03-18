@@ -9,6 +9,7 @@ var searchBtn = $("#search");
 var dateNow = dayjs().format("MM/DD/YYYY");
 var defaultCity = "Minneapolis";
 var defaultState = "MN";
+var historyBtn;
 
 var forecast = function (city, state) {
   city = city.toUpperCase();
@@ -108,6 +109,26 @@ var saveHistory = function (city, state) {
   localStorage.setItem("locations", JSON.stringify(stored));
 };
 
+var loadHistory = function () {
+  var storedHistory = localStorage.getItem("locations");
+  var locationHistory = JSON.parse(storedHistory) || 0;
+  if (Array.isArray(locationHistory)) {
+    for (var i = 0; i < locationHistory.length; i++) {
+      $("#history").append(
+        '<button id="searchHistory" class="btn historyBtn btn-secondary rounded mb-2 w-100" dataCity="' +
+          locationHistory[i].city +
+          '"dataState="' +
+          locationHistory[i].state +
+          '">' +
+          locationHistory[i].city +
+          ", " +
+          locationHistory[i].state +
+          "</button>"
+      );
+    }
+  }
+};
+
 var search = function (e) {
   e.preventDefault();
   var city = document.getElementById("city").value;
@@ -120,10 +141,19 @@ var search = function (e) {
 
   forecast(city, state);
 
-  document.getElementById("city").value='';
-  document.getElementById("state").value='';
+  document.getElementById("city").value = "";
+  document.getElementById("state").value = "";
 };
 
 forecast(defaultCity, defaultState);
+loadHistory();
 
 searchBtn.on("click", (e) => search(e));
+
+$(document).on("click", ".historyBtn", function (event) {
+  var locale = $(this).text();
+  var locales = locale.split(", ");
+  var cityHistory = locales[0];
+  var stateHistory = locales[1];
+  forecast(cityHistory, stateHistory);
+});
