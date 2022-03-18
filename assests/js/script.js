@@ -11,6 +11,8 @@ var defaultCity = "Minneapolis";
 var defaultState = "MN";
 
 var forecast = function (city, state) {
+  city = city.toUpperCase();
+  state = state.toUpperCase();
   fetch(geoUrl + "appid=" + apiKey + "&q=" + city + "," + state + ",us")
     .then(function (response) {
       return response.json();
@@ -75,9 +77,36 @@ var forecast = function (city, state) {
     });
 };
 
-var saveHistory = function(city, state) {
-  $("#history").append('<button id="searchHistory" class="btn historyBtn btn-primary rounded mb-2 w-100" dataCity="' + city + '"dataState="' + state + '">' + city + ", " + state + '</button>')
-}
+var saveHistory = function (city, state) {
+  city = city.toUpperCase();
+  state = state.toUpperCase();
+  $("#history").append(
+    '<button id="searchHistory" class="btn historyBtn btn-secondary rounded mb-2 w-100" dataCity="' +
+      city +
+      '"dataState="' +
+      state +
+      '">' +
+      city +
+      ", " +
+      state +
+      "</button>"
+  );
+  //create object
+  var cityState = {
+    city: city,
+    state: state,
+  };
+
+  var retrievedObject = localStorage.getItem("locations") || "[]";
+
+  console.log(retrievedObject);
+
+  var stored = JSON.parse(retrievedObject);
+
+  stored.push(cityState);
+
+  localStorage.setItem("locations", JSON.stringify(stored));
+};
 
 var search = function (e) {
   e.preventDefault();
@@ -90,6 +119,9 @@ var search = function (e) {
   saveHistory(city, state);
 
   forecast(city, state);
+
+  document.getElementById("city").value='';
+  document.getElementById("state").value='';
 };
 
 forecast(defaultCity, defaultState);
