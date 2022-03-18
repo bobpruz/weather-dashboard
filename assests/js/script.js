@@ -1,6 +1,6 @@
 var apiKey = "28dc3ffecf9f41325703aa618a323db2";
-var geoUrl = "http://api.openweathermap.org/geo/1.0/direct?";
-var url = "http://api.openweathermap.org/data/2.5/onecall?";
+var geoUrl = "https://api.openweathermap.org/geo/1.0/direct?";
+var url = "https://api.openweathermap.org/data/2.5/onecall?";
 var lat = "";
 var lon = "";
 var exclude = "exclude=minutely,hourly,alerts";
@@ -47,7 +47,7 @@ var forecast = function (city, state) {
           $("#uv-now").text(data1.current.uvi);
           $("#wicon-now").attr(
             "src",
-            "http://openweathermap.org/img/wn/" +
+            "https://openweathermap.org/img/wn/" +
               data1.current.weather[0].icon +
               ".png");
           if(data1.current.uvi < 3) {
@@ -66,7 +66,7 @@ var forecast = function (city, state) {
           for (var i = 0; i < data1.daily.length && i < 5; i++) {
             $("#wicon-" + s).attr(
               "src",
-              "http://openweathermap.org/img/wn/" +
+              "https://openweathermap.org/img/wn/" +
                 data1.daily[i].weather[0].icon +
                 ".png"
             );
