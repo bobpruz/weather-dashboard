@@ -1,60 +1,97 @@
 body {
-    background-color: lightyellow;
+  background-color: lightyellow;
 }
 
 /* search form */
 .card-search-title {
-    font-size: 1.5vw;;
+  font-size: 1.5vw;
 }
 
 /* search history */
 #history {
-    border: none;
+  border: none;
 }
 /* todays forecast */
 
 .card-title-now {
-    font-size: 2vw;
+  font-size: 2vw;
 }
 
 /* uv color mapping */
 .uv-severe {
-    background-color: red;
-    color: white;
-    font-weight: bold;
+  background-color: red;
+  color: white;
+  font-weight: bold;
 }
 
 .uv-moderate {
-    background-color: yellow;
-    font-weight: bold;
+  background-color: yellow;
+  font-weight: bold;
+  color: black;
 }
 
 .uv-favorable {
-    background-color: green;
-    font-weight: bold;
-    color: white;
+  background-color: green;
+  font-weight: bold;
+  color: white;
 }
 
 .card-subtitle-now {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 /* 5 day forecast */
 .five-forecast-title {
-    font-size: 1.5vw;
+  font-size: 1.5vw;
 }
 
 .forecast {
-    font-size: .75vw;
-    color: antiquewhite;
-    font-weight: bold;
+  font-size: 0.75vw;
+  color: antiquewhite;
+  font-weight: bold;
 }
 
 .card-title {
-    font-size: 1vw;
+  font-size: 1vw;
 }
 
 .card-body h6 {
-    font-size: 1.25vw;
+  font-size: 1.25vw;
+  font-weight: bold;
+}
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {
+  /* search form */
+  .card-search-title {
+    font-size: 4.5vw;
+  }
+
+#city-search {
+    font-size: 4.5vw;
+}
+
+  /* todays forecast */
+
+  .card-title-now {
+    font-size: 2vw;
+  }
+
+  /* 5 day forecast */
+  .five-forecast-title {
+    font-size: 6.0vw;
+  }
+
+  .forecast {
+    font-size: 3.5vw;
+  }
+
+  .card-title {
+    font-size: 3.5vw;
+  }
+
+  .card-body h6 {
+    font-size: 4.5vw;
     font-weight: bold;
+  }
 }
