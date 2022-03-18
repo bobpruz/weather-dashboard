@@ -7,11 +7,11 @@ var exclude = "exclude=minutely,hourly,alerts";
 var units = "imperial";
 var searchBtn = $("#search");
 var dateNow = dayjs().format("MM/DD/YYYY");
-
-console.log("test");
+var defaultCity = "Minneapolis";
+var defaultState = "MN";
 
 var forecast = function (city, state) {
-  fetch(geoUrl + "appid=" + apiKey + "&q=" + "phoenix" + "," + "az" + ",us")
+  fetch(geoUrl + "appid=" + apiKey + "&q=" + city + "," + state + ",us")
     .then(function (response) {
       return response.json();
     })
@@ -75,13 +75,17 @@ var forecast = function (city, state) {
     });
 };
 
-// var search = function() {
-//   var city = document.getElementById("city").value;
-//   var state = document.getElementById("state").value;
+var search = function (e) {
+  e.preventDefault();
+  var city = document.getElementById("city").value;
+  var state = document.getElementById("state").value;
 
-//   forecast(city, state)
-// }
+  console.log(city);
+  console.log(state);
 
-// searchBtn.on("click", search)
+  forecast(city, state);
+};
 
-forecast("Thayer", "IA");
+forecast(defaultCity, defaultState);
+
+searchBtn.on("click", (e) => search(e));
